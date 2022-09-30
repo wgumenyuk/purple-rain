@@ -3,7 +3,19 @@
     "@babel/preset-env",
     "@babel/typescript"
   ],
-  "plugins": [],
+  "plugins": [
+    [
+      "module-resolver", {
+        "cwd": "./src",
+        "alias": {
+          "@config": "./config",
+          "@internal": "./internal",
+          "@loaders": "./loaders",
+          "@structs": "./structs"
+        }
+      }
+    ]
+  ],
   "comments": false,
   "ignore": [ "./src/types" ]
 }
