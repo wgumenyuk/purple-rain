@@ -39,16 +39,6 @@ class Queue extends TypedEmitter<QueueEvents> {
     private connection: VoiceConnection;
 
     /**
-        Liste von Songs.
-    */
-    private songs: Song[];
-
-    /**
-        Aktueller Song.
-    */
-    private currentSong: Song | null;
-
-    /**
         Audio-Player.
     */
     private audioPlayer: AudioPlayer;
@@ -62,6 +52,16 @@ class Queue extends TypedEmitter<QueueEvents> {
         Resolover.
     */
     private resolver: Resolver;
+
+    /**
+        Liste von Songs.
+    */
+    public songs: Song[];
+
+    /**
+        Aktueller Song.
+    */
+    public currentSong: Song | null;
 
     /**
         ID des Voice-Channels.
@@ -185,6 +185,25 @@ class Queue extends TypedEmitter<QueueEvents> {
             this.songs.unshift(song);
         } else {
             this.songs.push(song);
+        }
+    }
+
+    /**
+        Überspringt den aktuellen Song.
+    */
+    public skip(): void {
+        this.audioPlayer.stop();
+    }
+
+    /**
+        Mischt die Songs durch.
+    */
+    public shuffle(): void {
+        if(this.size === 0) return;
+
+        for(let i = this.size - 1; i > 0; i--) {
+            const j = Math.floor(Math.random() * (i + 1));
+            [ this.songs[i], this.songs[j] ] = [ this.songs[j], this.songs[i] ];
         }
     }
 
