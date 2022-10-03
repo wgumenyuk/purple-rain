@@ -1,7 +1,7 @@
 {
-  "name": "ts-project-template",
+  "name": "aura",
   "version": "1.0.0",
-  "description": "Eine Vorlage für TypeScript-Projekte.",
+  "description": "Maßgefertigter Musik-Bot für Discord.",
   "main": "./build/index.js",
   "private": true,
   "scripts": {
