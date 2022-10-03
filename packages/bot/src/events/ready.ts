@@ -1,13 +1,13 @@
 import { ActivityType } from "discord.js";
 
 // Types
-import type Aurelia from "@structs/aurelia";
+import type Aura from "@structs/aura";
 
 /**
     Handler für das `ready`-Event.
-    Wird ausgeführt, sobald Aurelia eine Verbindung zu Discord hergestellt hat.
+    Wird ausgeführt, sobald Aura eine Verbindung zu Discord hergestellt hat.
 */
-const onReady = (bot: Aurelia) => {
+const onReady = (bot: Aura) => {
     bot.logger.info("Verbindung hergestellt");
 
     bot.user!.setActivity({

@@ -1,9 +1,9 @@
-import type Aurelia from "@structs/aurelia";
+import type Aura from "@structs/aura";
 
 /**
     Fährt den Server ordnungsgemäß herunter.
 */
-const gracefulExit = (bot: Aurelia) => {
+const gracefulExit = (bot: Aura) => {
     bot.logger.warn("Fahre ordnungsgemäß herunter...");
 
     bot.destroy();

@@ -21,7 +21,7 @@ type Colors = {
 // #endregion
 
 /**
-    Intents für Aurelia.
+    Intents für Aura.
 */
 const INTENTS: GatewayIntentBits[] = [
     GatewayIntentBits.Guilds,
@@ -32,9 +32,9 @@ const INTENTS: GatewayIntentBits[] = [
 ];
 
 /**
-    Aurelia.
+    Aura.
 */
-class Aurelia extends Client {
+class Aura extends Client {
     // #region Attribute
     /**
         Geladene Befehle.
@@ -82,7 +82,7 @@ class Aurelia extends Client {
         this.logger = logger;
 
         this.colors = {
-            PURPLE: "#A855F7",
+            PURPLE: "#AA8ED6",
             RED: "#F43F5E"
         };
 
@@ -90,10 +90,10 @@ class Aurelia extends Client {
     }
 
     /**
-        Startet Aurelia.
+        Startet Aura.
     */
     public async start(): Promise<void> {
-        this.logger.info(`Starte Aurelia (v${this.version})`);
+        this.logger.info(`Starte Aura (v${this.version})`);
         
         process.on("SIGINT", () => gracefulExit(this));
 
@@ -109,4 +109,4 @@ class Aurelia extends Client {
     }
 }
 
-export default Aurelia;
+export default Aura;

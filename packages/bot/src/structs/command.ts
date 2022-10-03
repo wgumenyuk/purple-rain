@@ -1,5 +1,5 @@
 import type { Message } from "discord.js";
-import type Aurelia from "@structs/aurelia";
+import type Aura from "@structs/aura";
 
 // #region Types
 type CommandOptions = {
@@ -49,7 +49,7 @@ abstract class Command {
     /**
         Führt den Befehl aus.
     */
-    public abstract run(bot: Aurelia, message: Message, args?: string[]): Promise<void>;
+    public abstract run(bot: Aura, message: Message, args?: string[]): Promise<void>;
 }
 
 export default Command;

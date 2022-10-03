@@ -5,13 +5,13 @@ import config from "@config";
 
 // Types
 import type { Message } from "discord.js";
-import type Aurelia from "@structs/aurelia";
+import type Aura from "@structs/aura";
 
 /**
     Handler für das `messageCreate`-Event.
-    Wird ausgeführt, sobald Aurelia eine Nachricht erhält.
+    Wird ausgeführt, sobald Aura eine Nachricht erhält.
 */
-const onMessageCreate = async (bot: Aurelia, message: Message) => {
+const onMessageCreate = async (bot: Aura, message: Message) => {
     if(message.author.bot) return;
     if(!message.guild) return;
 

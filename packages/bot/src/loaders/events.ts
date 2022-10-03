@@ -2,7 +2,7 @@ import path from "path";
 import glob from "glob-promise";
 
 // Types
-import type Aurelia from "@structs/aurelia";
+import type Aura from "@structs/aura";
 
 /**
     Pfad zum Events-Ordner.
@@ -12,7 +12,7 @@ const EVENTS_PATH = path.resolve(__dirname, "../events/*.js").replaceAll("\\", "
 /**
     Lädt alle verfügbaren Events.
 */
-const loadEvents = async (bot: Aurelia) => {
+const loadEvents = async (bot: Aura) => {
     const start = performance.now();
 
     const files = await glob(EVENTS_PATH);

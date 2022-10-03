@@ -1,5 +1,5 @@
-import Aurelia from "@structs/aurelia";
+import Aura from "@structs/aura";
 
-const aurelia = new Aurelia();
+const aura = new Aura();
 
-aurelia.start();
+aura.start();

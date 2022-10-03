@@ -2,7 +2,7 @@ import path from "path";
 import glob from "glob-promise";
 
 // Types
-import type Aurelia from "@structs/aurelia";
+import type Aura from "@structs/aura";
 import type Command from "@structs/command";
 
 /**
@@ -13,7 +13,7 @@ const COMMANDS_PATH = path.resolve(__dirname, "../commands/*.js").replaceAll("\\
 /**
     Lädt alle verfügbaren Events.
 */
-const loadCommands = async (bot: Aurelia) => {
+const loadCommands = async (bot: Aura) => {
     const start = performance.now();
 
     const files = await glob(COMMANDS_PATH);
