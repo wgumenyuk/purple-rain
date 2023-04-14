@@ -1,0 +1,20 @@
+{
+  "name": "@uelgum/purple-rain",
+  "version": "1.0.0",
+  "description": "Maßgefertigter Musik-Bot für Discord.",
+  "main": "./build/index.js",
+  "scripts": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/uelgum/purple-rain.git"
+  },
+  "author": "Wlad G. Gumenyuk",
+  "contributors": [
+    "Artjom G. Gumenyuk"
+  ],
+  "license": "GPL-3.0",
+  "bugs": {
+    "url": "https://github.com/uelgum/purple-rain/issues"
+  },
+  "homepage": "https://github.com/uelgum/purple-rain#readme"
+}
