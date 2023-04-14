@@ -24,6 +24,7 @@
   },
   "dependencies": {
     "discord.js": "^14.9.0",
+    "fast-glob": "^3.2.12",
     "module-alias": "^2.2.2"
   }
 }
