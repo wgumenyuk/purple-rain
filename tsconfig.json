@@ -5,9 +5,9 @@
     "outDir": "./build",
     "baseUrl": "./src",
     "paths": {
-      "$internal": [ "./internal/*" ],
-      "$loaders": [ "./loaders/*" ],
-      "$structs": [ "./structs/*" ]
+      "$internal/*": [ "./internal/*" ],
+      "$loaders/*": [ "./loaders/*" ],
+      "$structs/*": [ "./structs/*" ]
     },
     "esModuleInterop": true,
     "removeComments": true,
