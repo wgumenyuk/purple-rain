@@ -18,6 +18,7 @@
   },
   "homepage": "https://github.com/uelgum/purple-rain#readme",
   "devDependencies": {
-    "rimraf": "^5.0.0"
+    "rimraf": "^5.0.0",
+    "typescript": "^5.0.4"
   }
 }
