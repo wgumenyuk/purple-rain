@@ -18,10 +18,12 @@
   },
   "homepage": "https://github.com/uelgum/purple-rain#readme",
   "devDependencies": {
+    "@types/module-alias": "^2.0.1",
     "rimraf": "^5.0.0",
     "typescript": "^5.0.4"
   },
   "dependencies": {
-    "discord.js": "^14.9.0"
+    "discord.js": "^14.9.0",
+    "module-alias": "^2.2.2"
   }
 }
