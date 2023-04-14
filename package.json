@@ -3,7 +3,10 @@
   "version": "1.0.0",
   "description": "Maßgefertigter Musik-Bot für Discord.",
   "main": "./build/index.js",
-  "scripts": {},
+  "scripts": {
+    "clean": "rimraf ./build",
+    "build": "rimraf ./build && tsc"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/uelgum/purple-rain.git"
