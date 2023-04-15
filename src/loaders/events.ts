@@ -31,7 +31,7 @@ const loadEvents = async (bot: Bot) => {
         bot.on(eventName, eventHandler.bind(null, bot));
     }
 
-    bot.logger.debug("Events geladen");
+    bot.logger.debug(`Events geladen (${bot.eventNames().length})`);
 };
 
 export default loadEvents;
