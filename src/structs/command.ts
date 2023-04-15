@@ -113,7 +113,7 @@ abstract class Command {
     /**
         Führt den Befehl aus.
     */
-    public abstract run(bot: Bot, message: Message, args: string[]): Promise<void>;
+    public abstract run(bot: Bot, message: Message<true>, args: string[]): Promise<void>;
 };
 
 export {
