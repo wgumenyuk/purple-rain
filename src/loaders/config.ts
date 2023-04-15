@@ -20,7 +20,13 @@ const configSchema = z.object({
         Token.
     */
     token: z.string()
-        .length(72)
+        .length(72),
+
+    /**
+        Prefix des Bots.
+    */
+    prefix: z.string()
+        .min(1)
 });
 
 /**
