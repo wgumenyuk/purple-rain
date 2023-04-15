@@ -28,6 +28,10 @@ const loadEvents = async (bot: Bot) => {
         const eventName = path.basename(file).replace(".js", "");
         const eventHandler: EventHandler = (await import(file)).default;
 
+        if(typeof eventHandler !== "function") {
+            throw new Error(`Event-Loader: Fehlender Handler für "${eventName}"`);
+        }
+
         bot.on(eventName, eventHandler.bind(null, bot));
     }
 
