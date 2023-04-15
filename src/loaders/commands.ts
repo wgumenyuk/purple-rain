@@ -55,7 +55,7 @@ const loadCommands = async (bot: Bot) => {
         addAliases(bot, command);
     }
 
-    bot.logger.debug("Befehle geladen");
+    bot.logger.debug(`Befehle geladen (${bot.commands.size})`);
 };
 
 export default loadCommands;
