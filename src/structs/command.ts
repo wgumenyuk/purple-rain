@@ -111,6 +111,23 @@ abstract class Command {
     }
 
     /**
+        Erklärung zur Verwendung des Befehls.
+    */
+    public get usage() {
+        let usage = this.name;
+
+        if(this.args.length > 0) {
+            const args = this.args
+                .map((arg) => arg.required ? `<${arg.value}>` : `[${arg.value}]`)
+                .join(" ");
+
+            usage += ` ${args}`;
+        }
+
+        return usage;
+    }
+
+    /**
         Führt den Befehl aus.
     */
     public abstract run(bot: Bot, message: Message<true>, args: string[]): Promise<void>;
