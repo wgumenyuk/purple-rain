@@ -19,8 +19,7 @@ class VersionCommand extends Command {
         super({
             name: "version",
             group: CommandGroup.SYSTEM,
-            description: "Zeigt die aktuelle Version des Bots an.",
-            examples: [ "version" ]
+            description: "Zeigt die aktuelle Version des Bots an."
         });
     }
 
