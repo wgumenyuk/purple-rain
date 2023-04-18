@@ -23,6 +23,9 @@ class VersionCommand extends Command {
         });
     }
 
+    /**
+        Führt den Befehl aus.
+    */
     public async run(bot: Bot, message: Message<true>, _: any): Promise<void> {
         const embed = new EmbedBuilder()
             .setColor(Color.PURPLE)
