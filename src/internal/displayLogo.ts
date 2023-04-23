@@ -24,6 +24,7 @@ const RESET = "\u001b[0m";
     Zeigt das Logo beim Starten des Bots an.
 */
 const displayLogo = () => {
+    console.clear();
     process.stdout.write(`${PURPLE}${LOGO}${RESET}\n`);
 };
 
