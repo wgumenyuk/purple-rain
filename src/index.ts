@@ -12,11 +12,8 @@ const start = async () => {
     });
 
     const Bot = (await import("$structs/bot")).default;
-    const displayLogo = (await import("$internal/displayLogo")).default;
-
     const bot = new Bot();
 
-    displayLogo();
     bot.start();
 };
 

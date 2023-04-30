@@ -7,6 +7,9 @@ import loadVersion from "$loaders/version";
 import loadEvents from "$loaders/events";
 import loadCommands from "$loaders/commands";
 
+// Intern
+import displayLogo from "$internal/displayLogo";
+
 // Types
 import type Logger from "@uelgum/logger";
 import type Command from "$structs/command";
@@ -74,6 +77,7 @@ class Bot extends Client {
         Startet den Bot.
     */
     public async start() {
+        displayLogo();
         this.logger.info(`Starte Purple Rain (${this.version})`);
 
         try {
