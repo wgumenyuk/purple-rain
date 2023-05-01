@@ -5,6 +5,8 @@ import { addAliases } from "module-alias";
     Startet das Programm. 
 */
 const start = async () => {
+    console.clear();
+    
     addAliases({
         "$internal": path.join(__dirname, "./internal"),
         "$loaders": path.join(__dirname, "./loaders"),
