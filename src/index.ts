@@ -4,9 +4,9 @@ import { addAliases } from "module-alias";
 /**
     Startet das Programm. 
 */
-const start = async () => {
+const main = async () => {
     console.clear();
-    
+
     addAliases({
         "$internal": path.join(__dirname, "./internal"),
         "$loaders": path.join(__dirname, "./loaders"),
@@ -19,4 +19,4 @@ const start = async () => {
     bot.start();
 };
 
-start();
+main();
