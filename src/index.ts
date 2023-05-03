@@ -8,9 +8,9 @@ const main = async () => {
     console.clear();
 
     addAliases({
-        "$internal": path.join(__dirname, "./internal"),
-        "$loaders": path.join(__dirname, "./loaders"),
-        "$structs": path.join(__dirname, "./structs")
+        "$internal": path.join(__dirname, "internal"),
+        "$loaders": path.join(__dirname, "loaders"),
+        "$structs": path.join(__dirname, "structs")
     });
 
     const Bot = (await import("$structs/bot")).default;
