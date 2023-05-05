@@ -16,6 +16,11 @@ import type Command from "$structs/command";
 import type { Config } from "$loaders/config";
 
 /**
+    Node-Environment.
+*/
+const IS_DEV = (process.env.NODE_ENV !== "production");
+
+/**
     Intents.
 */
 const INTENTS: GatewayIntentBits[] = [
@@ -47,6 +52,11 @@ class Bot extends Client {
     public logger: Logger;
 
     /**
+        Ob der Bot sich im Development-Modus befindet.
+    */
+    public readonly isDev: boolean;
+
+    /**
         Konfiguration.
     */
     public readonly config: Config;
@@ -67,6 +77,8 @@ class Bot extends Client {
 
         this.commands = new Collection();
         this.aliases = new Collection();
+
+        this.isDev = IS_DEV;
 
         this.logger = loadLogger();
         this.config = loadConfig();
