@@ -90,6 +90,11 @@ class Bot extends Client {
     */
     public async start() {
         displayLogo();
+
+        if(this.isDev) {
+            this.logger.debug("Dev-Modus aktiviert");
+        }
+
         this.logger.info(`Starte Purple Rain (${this.version})`);
 
         try {
