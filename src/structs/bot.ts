@@ -16,11 +16,6 @@ import type Command from "$structs/command";
 import type { Config } from "$loaders/config";
 
 /**
-    Node-Environment.
-*/
-const IS_DEV = (process.env.NODE_ENV !== "production");
-
-/**
     Intents.
 */
 const INTENTS: GatewayIntentBits[] = [
@@ -78,7 +73,7 @@ class Bot extends Client {
         this.commands = new Collection();
         this.aliases = new Collection();
 
-        this.isDev = IS_DEV;
+        this.isDev = (process.env.NODE_ENV !== "production");
 
         this.logger = loadLogger();
         this.config = loadConfig();
