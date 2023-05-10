@@ -111,6 +111,14 @@ abstract class Command {
     }
 
     /**
+        Überprüft, ob ein Objekt eine Instanz von `Command`
+        ist.
+    */
+    public static isCommand(object: unknown) {
+        return (object instanceof Command);
+    }
+
+    /**
         Erklärung zur Verwendung des Befehls.
     */
     public get usage() {
