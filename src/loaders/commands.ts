@@ -1,9 +1,11 @@
 import path from "node:path";
 import glob from "fast-glob";
 
+// Intern
+import Command from "$structs/command";
+
 // Types
 import type Bot from "$structs/bot";
-import type Command from "$structs/command";
 
 /**
     Glob-Pfad zum `commands`-Ordner.
@@ -49,6 +51,10 @@ const loadCommands = async (bot: Bot) => {
 
     for(const file of files) {
         const command: Command = new (await import(file)).default;
+
+        if(!Command.isCommand(command)) {
+            throw new Error(`Command-Loader: Fehlerhafter Befehl "${file}"`);
+        }
         
         // Befehl und seine Aliasse hinzufügen
         addCommand(bot, command);
