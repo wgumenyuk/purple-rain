@@ -2,6 +2,7 @@ import { Client, Collection, GatewayIntentBits } from "discord.js";
 
 // Loaders
 import loadLogger from "$loaders/logger";
+import loadVinyl from "$loaders/vinyl";
 import loadConfig from "$loaders/config";
 import loadVersion from "$loaders/version";
 import loadEvents from "$loaders/events";
@@ -12,6 +13,7 @@ import displayLogo from "$internal/displayLogo";
 
 // Types
 import type Logger from "@uelgum/logger";
+import type { Vinyl } from "@uelgum/vinyl";
 import type Command from "$structs/command";
 import type { Config } from "$loaders/config";
 
@@ -47,6 +49,11 @@ class Bot extends Client {
     public logger: Logger;
 
     /**
+        Vinyl.
+    */
+    public vinyl: Vinyl;
+
+    /**
         Ob der Bot sich im Development-Modus befindet.
     */
     public readonly isDev: boolean;
@@ -76,6 +83,7 @@ class Bot extends Client {
         this.isDev = (process.env.NODE_ENV !== "production");
 
         this.logger = loadLogger();
+        this.vinyl = loadVinyl();
         this.config = loadConfig();
         this.version = loadVersion();
     }
