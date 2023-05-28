@@ -1,0 +1,19 @@
+{
+  "compilerOptions": {
+    "target": "esnext",
+    "module": "commonjs",
+    "outDir": "./build",
+    "baseUrl": "./src",
+    "paths": {
+      "$loaders/*": [ "./loaders/*" ],
+      "$structs/*": [ "./structs/*" ]
+    },
+    "esModuleInterop": true,
+    "declaration": true,
+    "sourceMap": true,
+    "strict": true
+  },
+  "include": [
+    "./src"
+  ]
+}
