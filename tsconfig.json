@@ -9,7 +9,6 @@
       "$structs/*": [ "./structs/*" ]
     },
     "esModuleInterop": true,
-    "declaration": true,
     "sourceMap": true,
     "strict": true
   },
