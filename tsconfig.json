@@ -5,6 +5,7 @@
     "outDir": "./build",
     "baseUrl": "./src",
     "paths": {
+      "$internal/*": [ "./internal/*" ],
       "$loaders/*": [ "./loaders/*" ],
       "$structs/*": [ "./structs/*" ]
     },
