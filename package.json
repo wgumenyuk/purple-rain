@@ -1,0 +1,44 @@
+{
+  "name": "@uelgum/purple-rain",
+  "version": "1.0.0",
+  "description": "Maßgefertigter Musik-Bot für den Gentlemen's Club.",
+  "main": "./build/index.js",
+  "scripts": {
+    "prepare": "husky install",
+    "clean": "rimraf ./build",
+    "build": "rimraf ./build && tsc"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/uelgum/purple-rain.git"
+  },
+  "author": "Wlad G. Gumenyuk",
+  "contributors": [
+    "Artjom G. Gumenyuk"
+  ],
+  "license": "GPL-3.0",
+  "bugs": {
+    "url": "https://github.com/uelgum/purple-rain/issues"
+  },
+  "homepage": "https://github.com/uelgum/purple-rain#readme",
+  "devDependencies": {
+    "@commitlint/cli": "^17.6.3",
+    "@commitlint/config-conventional": "^17.6.3",
+    "@types/module-alias": "^2.0.1",
+    "husky": "^8.0.3",
+    "rimraf": "^5.0.1",
+    "typescript": "^5.0.4"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "dependencies": {
+    "@discordjs/opus": "^0.9.0",
+    "@uelgum/logger": "https://gumenyuk.de/packages/uelgum-logger-2.0.1.tgz",
+    "@uelgum/vinyl": "https://gumenyuk.de/packages/uelgum-vinyl-1.2.0.tgz",
+    "discord.js": "^14.11.0",
+    "fast-glob": "^3.2.12",
+    "libsodium-wrappers": "^0.7.11",
+    "module-alias": "^2.2.2"
+  }
+}
