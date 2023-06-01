@@ -19,5 +19,9 @@ const enum AnsiColor {
     Zeigt das Logo vom Bot an.
 */
 export const displayLogo = () => {
+    if(process.stdout.columns < 85) {
+        return;
+    }
+    
     process.stdout.write(`${AnsiColor.PURPLE}${LOGO}${AnsiColor.RESET}\n`);
 };
