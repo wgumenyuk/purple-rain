@@ -10,7 +10,7 @@ import { loadEvents } from "$loaders/events";
 import { loadCommands } from "$loaders/commands";
 
 // Types
-import type Logger from "@uelgum/logger";
+import type { Logger } from "@uelgum/logger";
 import type { Vinyl } from "@uelgum/vinyl";
 import type { Command } from "$structs/command";
 
