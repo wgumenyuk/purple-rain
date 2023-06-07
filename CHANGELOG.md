@@ -8,6 +8,15 @@
     ### Entfernt
 -->
 
+## v1.1.0 (2023-06-08)
+### Hinzugefügt
+- [[`61b5e2e`](https://github.com/uelgum/purple-rain/commit/61b5e2e)] - feat: add `shuffle` command
+- [[`77c9469`](https://github.com/uelgum/purple-rain/commit/77c9469)] - chore: add `config.example.json`
+
+### Behoben
+- [[`5c54f55`](https://github.com/uelgum/purple-rain/commit/5c54f55)] - fix: faulty `voiceStateUpdate` handler
+- [[`cd5f0c2`](https://github.com/uelgum/purple-rain/commit/cd5f0c2)] - fix: show queue duration as timestamp
+
 ## v1.0.0 (2023-06-06)
 ### Hinzugefügt
 - [[`caa3e30`](https://github.com/uelgum/purple-rain/commit/caa3e30)] - feat: add `queue` command
