@@ -9,7 +9,7 @@
 -->
 
 ## v1.0.0 (2023-06-06)
-## Hinzugefügt
+### Hinzugefügt
 - [[`caa3e30`](https://github.com/uelgum/purple-rain/commit/caa3e30)] - feat: add `queue` command
 - [[`5c6a231`](https://github.com/uelgum/purple-rain/commit/5c6a231)] - feat: add `nowplaying` command
 - [[`cd680e2`](https://github.com/uelgum/purple-rain/commit/cd680e2)] - feat: add `skip` command
@@ -39,5 +39,5 @@
 - [[`f67dfd1`](https://github.com/uelgum/purple-rain/commit/f67dfd1)] - feat: add `Command` class
 - [[`6a1f277`](https://github.com/uelgum/purple-rain/commit/6a1f277)] - feat: add `Bot` class
 
-## Verändert
+### Verändert
 - [[`8e17d9f`](https://github.com/uelgum/purple-rain/commit/8e17d9f)] - refactor: adjust to new logger version
