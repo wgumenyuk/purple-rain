@@ -61,6 +61,10 @@ class QueueCommand extends Command {
             })
             .join("\n");
 
+        const duration = new Date(queue.duration)
+            .toISOString()
+            .slice(11, -5);
+
         const embed = new EmbedBuilder()
             .setColor(Color.PURPLE)
             .setAuthor({
@@ -68,7 +72,7 @@ class QueueCommand extends Command {
                 iconURL: message.author.displayAvatarURL()
             })
             .setFooter({
-                text: `Insgesamt ${queue.size} Songs (${queue.duration})`
+                text: `Insgesamt ${queue.size} Songs (${duration})`
             });
 
         if(queue.songs.length > 0) {
