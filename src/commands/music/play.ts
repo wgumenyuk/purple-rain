@@ -1,5 +1,5 @@
 import { ChannelType, EmbedBuilder } from "discord.js";
-import { Playlist, Song } from "@uelgum/vinyl";
+import { Playlist, Song, VinylError } from "@uelgum/vinyl";
 
 // Intern
 import { Color } from "$structs/bot";
@@ -41,6 +41,44 @@ class PlayCommand extends Command {
             guild,
             voiceChannel
         });
+    }
+
+    /**
+        Erstellt eine Fehler-Embed.
+    */
+    private _createErrorEmbed(error: unknown) {
+        const embed = new EmbedBuilder()
+            .setColor(Color.RED);
+
+        const isError = (error instanceof Error);
+        const message = (isError) ? error.message : null;
+        
+        let description: string;
+
+        switch(message) {
+            case VinylError.NO_AUDIO_FORMATS:
+            case VinylError.NO_LIVESTREAM_AUDIO_FORMATS: {
+                description = "Es wurden keine spielbaren Audioformate gefunden.";
+                break;
+            }
+
+            case VinylError.NO_SEARCH_RESULTS: {
+                description = "Es wurden keine Ergebnisse gefunden.";
+                break;
+            }
+
+            case VinylError.QUEUE_SIZE_EXCEEDED: {
+                description = "Die Queue ist voll.";
+                break;
+            }
+
+            default: {
+                description = "Die Anfrage konnte nicht verarbeitet werden.";
+            }
+        }
+
+        embed.setDescription(description);
+        return embed;
     }
 
     /**
@@ -122,9 +160,7 @@ class PlayCommand extends Command {
         try {
             result = await queue.addRequest(member, query);
         } catch(error) {
-            const embed = new EmbedBuilder()
-                .setColor(Color.RED)
-                .setDescription("Keine Ergebnisse gefunden.");
+            const embed = this._createErrorEmbed(error);
 
             message.channel.send({
                 embeds: [
