@@ -53,7 +53,7 @@ class ShuffleCommand extends Command {
 
         if(queue.size < 2) {
             const description =
-                "Die Queue muss dafür mindestens 2 Songs enthalten.";
+                "Die Queue ist zu klein zum Mischen.";
 
             const embed = new EmbedBuilder()
                 .setColor(Color.RED)
