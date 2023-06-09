@@ -43,17 +43,17 @@ class NowPlayingCommand extends Command {
             (playbackDuration * PROGRESS_BAR_MAX_LENGTH) / song.duration
         );
 
+        const bar = new Array(PROGRESS_BAR_MAX_LENGTH).fill("—");
+        bar.splice(cursorIndex, 1, "🟣");
+
         const playbackTimestamp = new Date(playbackDuration * 1000)
             .toISOString()
             .slice(11, -5);
 
-        const bar = new Array(PROGRESS_BAR_MAX_LENGTH).fill("=");
-
-        bar.splice(cursorIndex, 1, "🟣");
-
         return (
-            `[${inlineCode(bar.join(""))}] ` +
-            `(${playbackTimestamp} / ${song.timestamp})`
+            `${playbackTimestamp} ` +
+            inlineCode(bar.join("")) +
+            ` ${song.timestamp}`
         );
     }
 
