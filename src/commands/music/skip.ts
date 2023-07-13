@@ -22,7 +22,9 @@ class SkipCommand extends Command {
             group: CommandGroup.MUSIC,
             description: "Überspringt den aktuellen Song.",
             usage: "skip",
-            aliases: [],
+            aliases: [
+                "s"
+            ],
             examples: []
         });
     }
