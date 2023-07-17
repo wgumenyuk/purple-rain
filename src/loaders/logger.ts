@@ -15,7 +15,7 @@ import type { Adapter } from "@uelgum/logger";
 export const loadLogger = () => {
     const isProduction = (process.env.NODE_ENV === "production");
     
-    const level: Level = (isProduction) ?
+    const level = (isProduction) ?
         Level.INFO :
         Level.DEBUG;
     
@@ -25,9 +25,7 @@ export const loadLogger = () => {
 
     if(isProduction) {
         const logPath = path.resolve(__dirname, "../../logs");
-        const fileAdapter = new FileAdapater(logPath);
-
-        adapters.unshift(fileAdapter);
+        adapters.unshift(new FileAdapater(logPath));
     }
 
     return new Logger({
