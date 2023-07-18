@@ -1,4 +1,3 @@
-import path from "node:path";
 import {
     Logger,
     Level,
@@ -24,7 +23,11 @@ export const loadLogger = () => {
     ];
 
     if(isProduction) {
-        const logPath = path.resolve(__dirname, "../../logs");
+        const logPath = new URL(
+            "../../logs",
+            import.meta.url
+        ).toString(); // TODO Später ersetzen
+
         adapters.unshift(new FileAdapater(logPath));
     }
 

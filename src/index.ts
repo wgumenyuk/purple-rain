@@ -1,22 +1,5 @@
-import path from "node:path";
-import { addAliases } from "module-alias";
+import { Bot } from "$structs/bot";
 
-/**
-    Main.
-*/
-const main = async () => {
-    // Aliasse hinzufügen
-    addAliases({
-        "$internal": path.resolve(__dirname, "internal"),
-        "$loaders": path.resolve(__dirname, "loaders"),
-        "$structs": path.resolve(__dirname, "structs")
-    });
+const bot = new Bot();
 
-    // Bot initialisieren
-    const { Bot } = await import("$structs/bot");
-    const bot = new Bot();
-
-    return bot.start();
-};
-
-main();
+bot.start();

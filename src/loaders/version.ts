@@ -1,10 +1,12 @@
 import fs from "node:fs";
-import path from "node:path";
 
 /**
     Pfad zur `package.json`.
 */
-const PACKAGE_JSON_PATH = path.resolve(__dirname, "../../package.json");
+const PACKAGE_JSON_PATH = new URL(
+    "../../package.json",
+    import.meta.url
+);
 
 /**
     Lädt die Version aus der `package.json`.

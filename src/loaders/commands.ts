@@ -1,3 +1,4 @@
+import { fileURLToPath } from "node:url";
 import path from "node:path";
 import glob from "fast-glob";
 
@@ -22,9 +23,10 @@ type CommandFile = {
 /**
     Glob-Pfad zum `/commands`-Ordner.
 */
-const COMMANDS_PATH = path
-    .resolve(__dirname, "../commands/**/*.js")
-    .replaceAll("\\", "/");
+const COMMANDS_PATH = path.join(
+    path.dirname(fileURLToPath(import.meta.url)),
+    "../commands/**/*.js"
+);
 
 /**
     Fügt den Befehl zur Kollektion hinzu.

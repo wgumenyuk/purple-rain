@@ -1,3 +1,4 @@
+import { fileURLToPath } from "node:url";
 import path from "node:path";
 import glob from "fast-glob";
 
@@ -24,9 +25,10 @@ type EventHandlerFile = {
 /**
     Glob-Pfad zum `/events`-Ordner.
 */
-const EVENTS_PATH = path
-    .resolve(__dirname, "../events/**/*.js")
-    .replaceAll("\\", "/");
+const EVENTS_PATH = path.join(
+    path.dirname(fileURLToPath(import.meta.url)),
+    "../events/**/*.js"
+)
 
 /**
     Überprüft, ob die Exporte einer Datei ein gültiger

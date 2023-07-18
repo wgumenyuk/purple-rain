@@ -1,10 +1,12 @@
 import fs from "node:fs";
-import path from "node:path";
 
 /**
     Pfad zur `config.json`.
 */
-const CONFIG_PATH = path.resolve(__dirname, "../../config.json");
+const CONFIG_PATH = new URL(
+    "../../config.json",
+    import.meta.url
+);
 
 /**
     Lädt die Konfiguration.
