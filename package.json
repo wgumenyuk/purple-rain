@@ -26,6 +26,7 @@
     "@commitlint/cli": "^17.6.3",
     "@commitlint/config-conventional": "^17.6.3",
     "@types/module-alias": "^2.0.1",
+    "@uelgum/esmify": "github:uelgum/esmify",
     "husky": "^8.0.3",
     "rimraf": "^5.0.1",
     "typescript": "^5.0.4"
