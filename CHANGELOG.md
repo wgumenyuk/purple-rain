@@ -8,6 +8,22 @@
     ### Entfernt
 -->
 
+## v1.2.0 (2023-07-18)
+### Verändert
+- [[`998a4e4`](https://github.com/uelgum/purple-rain/commit/998a4e4)] - refactor: switch to esm
+- [[`3be48d3`](https://github.com/uelgum/purple-rain/commit/3be48d3)] - chore: switch to `esnext`
+- [[`351d2f4`](https://github.com/uelgum/purple-rain/commit/351d2f4)] - refactor: clean up logger loader
+- [[`3b07b40`](https://github.com/uelgum/purple-rain/commit/3b07b40)] - feat: improved embed
+- [[`d0f1b99`](https://github.com/uelgum/purple-rain/commit/d0f1b99)] - refactor: improved error message
+
+## Hinzugefügt
+- [[`5c49075`](https://github.com/uelgum/purple-rain/commit/5c49075)] - chore: add `esmify` to `build` script
+- [[`8107638`](https://github.com/uelgum/purple-rain/commit/8107638)] - chore: set `type` to `module`
+- [[`7882f6e`](https://github.com/uelgum/purple-rain/commit/7882f6e)] - chore: install `@uelgum/esmify`
+- [[`5ba4a6b`](https://github.com/uelgum/purple-rain/commit/5ba4a6b)] - chore: set `private` to `true`
+- [[`1f12b05`](https://github.com/uelgum/purple-rain/commit/1f12b05)] - feat: add alias `s` to `skip` command
+- [[`3b828b7`](https://github.com/uelgum/purple-rain/commit/3b828b7)] - feat: add better error handling
+
 ## v1.1.0 (2023-06-08)
 ### Hinzugefügt
 - [[`61b5e2e`](https://github.com/uelgum/purple-rain/commit/61b5e2e)] - feat: add `shuffle` command
