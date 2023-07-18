@@ -2,6 +2,7 @@
   "name": "@uelgum/purple-rain",
   "version": "1.1.0",
   "description": "Maßgefertigter Musik-Bot für den Gentlemen's Club.",
+  "type": "module",
   "main": "./build/index.js",
   "private": true,
   "scripts": {
