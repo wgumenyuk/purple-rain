@@ -8,9 +8,6 @@ dependencies:
   '@discordjs/opus':
     specifier: ^0.9.0
     version: registry.npmjs.org/@discordjs/opus@0.9.0
-  '@uelgum/logger':
-    specifier: github:uelgum/logger
-    version: github.com/uelgum/logger/e0f6c1b7053a2a24382f380afe4405f09eec4966
   '@uelgum/vinyl':
     specifier: github:uelgum/vinyl
     version: git@github.com+uelgum/vinyl/4158be3de0638425c9dbf84e1ec5c0b199b5d256(@discordjs/opus@0.9.0)
@@ -77,14 +74,6 @@ packages:
       - node-opus
       - opusscript
       - utf-8-validate
-    dev: false
-
-  github.com/uelgum/logger/e0f6c1b7053a2a24382f380afe4405f09eec4966:
-    resolution: {tarball: https://codeload.github.com/uelgum/logger/tar.gz/e0f6c1b7053a2a24382f380afe4405f09eec4966}
-    name: '@uelgum/logger'
-    version: 1.0.1
-    prepare: true
-    requiresBuild: true
     dev: false
 
   registry.npmjs.org/@babel/code-frame@7.22.5:
