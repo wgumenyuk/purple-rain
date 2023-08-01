@@ -20,9 +20,6 @@ dependencies:
   libsodium-wrappers:
     specifier: ^0.7.11
     version: registry.npmjs.org/libsodium-wrappers@0.7.11
-  module-alias:
-    specifier: ^2.2.2
-    version: registry.npmjs.org/module-alias@2.2.2
   pino:
     specifier: ^8.15.0
     version: registry.npmjs.org/pino@8.15.0
@@ -2560,12 +2557,6 @@ packages:
     version: 1.0.4
     engines: {node: '>=10'}
     hasBin: true
-    dev: false
-
-  registry.npmjs.org/module-alias@2.2.2:
-    resolution: {integrity: sha512-A/78XjoX2EmNvppVWEhM2oGk3x4lLxnkEA4jTbaK97QKSDjkIoOsKQlfylt/d3kKKi596Qy3NP5XrXJ6fZIC9Q==, registry: https://registry.npmjs.com/, tarball: https://registry.npmjs.org/module-alias/-/module-alias-2.2.2.tgz}
-    name: module-alias
-    version: 2.2.2
     dev: false
 
   registry.npmjs.org/ms@2.1.2:
