@@ -8,7 +8,7 @@
   "scripts": {
     "prepare": "husky install",
     "clean": "rimraf ./build",
-    "build": "rimraf ./build && tsc && esmify ./build"
+    "build": "rimraf ./build && swc ./src -d ./build"
   },
   "repository": {
     "type": "git",
