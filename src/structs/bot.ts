@@ -1,40 +1,17 @@
 import { Client, GatewayIntentBits } from "discord.js";
 
 // Intern
-import { displayLogo } from "$internal/logo";
-import { loadConfig } from "$loaders/config";
-import { loadLogger } from "$loaders/logger";
 import { loadVinyl } from "$loaders/vinyl";
 import { loadVersion } from "$loaders/version";
 import { loadEvents } from "$loaders/events";
 import { loadCommands } from "$loaders/commands";
+import { displayLogo } from "$internal/logo";
+import { logger } from "$internal/logger";
+import { TOKEN } from "$internal/config";
 
 // Types
-import type { Logger } from "@uelgum/logger";
 import type { Vinyl } from "@uelgum/vinyl";
 import type { Command } from "$structs/command";
-
-// #region Types
-/**
-    Konfiguraiton.
-*/
-type Config = {
-    /**
-        Token.
-    */
-    token: string;
-
-    /**
-        Prefix.
-    */
-    prefix: string;
-
-    /**
-        Owner-ID.
-    */
-    ownerId: string;
-};
-// #endregion
 
 /**
     Intents.
@@ -71,16 +48,6 @@ export class Bot extends Client {
         Kollektion von Aliassen.
     */
     public readonly aliases: Map<string, string>;
-    
-    /**
-        Konfiguration.
-    */
-    public readonly config: Config;
-
-    /**
-        Logger.
-    */
-    public readonly logger: Logger;
 
     /**
         Vinyl.
@@ -104,8 +71,6 @@ export class Bot extends Client {
         this.commands = new Map();
         this.aliases = new Map();
 
-        this.config = loadConfig();
-        this.logger = loadLogger();
         this.vinyl = loadVinyl();
         this.version = loadVersion();
     }
@@ -117,7 +82,7 @@ export class Bot extends Client {
         console.clear();
         displayLogo();
 
-        this.logger.info(`Starte Purple Rain (${this.version})`);
+        logger.info(`Starte Purple Rain (${this.version})`);
 
         try {
             // Loader ausführen
@@ -125,9 +90,9 @@ export class Bot extends Client {
             await loadCommands(this);
 
             // Verbindung herstellen
-            await this.login(this.config.token);
+            await this.login(TOKEN);
         } catch(error) {
-            this.logger.error(error);
+            logger.error(error);
             process.exit(1);
         }
     }
