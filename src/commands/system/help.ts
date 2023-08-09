@@ -3,6 +3,7 @@ import { EmbedBuilder, inlineCode } from "discord.js";
 // Intern
 import { Color } from "$structs/bot";
 import { Command, CommandGroup } from "$structs/command";
+import { PREFIX } from "$internal/config";
 
 // Types
 import type { Message } from "discord.js";
@@ -39,7 +40,7 @@ class HelpCommand extends Command {
         const description =
             "Purple Rain ist ein maßgefertigter Musik-Bot für " +
             "den Gentlemen's Club. " +
-            `Der Prefix von Purple Rain ist ${inlineCode(bot.config.prefix)}.`;
+            `Der Prefix von Purple Rain ist ${inlineCode(PREFIX)}.`;
 
         const embed = new EmbedBuilder()
             .setColor(Color.PURPLE)
