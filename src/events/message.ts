@@ -1,5 +1,8 @@
 import { Events } from "discord.js";
 
+// Intern
+import { PREFIX } from "$internal/config";
+
 // Types
 import type { Message } from "discord.js";
 import type { Bot } from "$structs/bot";
@@ -17,10 +20,9 @@ export const handler = async (bot: Bot, message: Message) => {
         return;
     }
 
-    const prefix = bot.config.prefix;
     const content = message.content;
 
-    if(!content.startsWith(prefix) || content.length < 2) {
+    if(!content.startsWith(PREFIX) || content.length < 2) {
         return;
     }
 
@@ -28,7 +30,7 @@ export const handler = async (bot: Bot, message: Message) => {
 
     const commandName = args
         .shift()!
-        .slice(prefix.length)
+        .slice(PREFIX.length)
         .toLowerCase();
 
     const command =

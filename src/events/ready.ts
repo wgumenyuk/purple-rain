@@ -1,5 +1,8 @@
 import { Events } from "discord.js";
 
+// Intern
+import { logger } from "$internal/logger";
+
 // Types
 import type { Bot } from "$structs/bot";
 
@@ -13,5 +16,5 @@ export const name = Events.ClientReady;
     Discord hergestellt hat.
 */
 export const handler = (bot: Bot) => {
-    bot.logger.info("Verbindung hergestellt");
+    logger.info("Verbindung hergestellt");
 };

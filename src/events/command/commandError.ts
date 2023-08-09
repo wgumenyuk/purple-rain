@@ -2,6 +2,7 @@ import { EmbedBuilder } from "discord.js";
 
 // Intern
 import { Color } from "$structs/bot";
+import { logger } from "$internal/logger";
 
 // Types
 import type { Message } from "discord.js";
@@ -24,7 +25,7 @@ export const handler = (
     error: Error
 ) => {
     error.message += ` (${command.name}, ${message.author.tag})`;
-    bot.logger.error(error);
+    logger.error(error);
 
     const description = "Ein Fehler ist beim Ausführen des Befehls aufgetreten.";
     
