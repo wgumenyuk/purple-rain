@@ -33,9 +33,9 @@ export const TOKEN = process.env.TOKEN!;
 /**
     Owner-ID.
 */
-export const OWNER_ID = process.env.OWNER_ID;
+export const OWNER_ID = process.env.OWNER_ID!
 
 /**
     Prefix des Bots.
 */
-export const PREFIX = process.env.PREFIX;
+export const PREFIX = process.env.PREFIX!;
