@@ -24,10 +24,10 @@ export const handler = (
     command: Command,
     error: Error
 ) => {
-    error.message += ` (${command.name}, ${message.author.tag})`;
-    logger.error(error);
+    logger.error(error, `${command.name}, ${message.author.tag}`);
 
-    const description = "Ein Fehler ist beim Ausführen des Befehls aufgetreten.";
+    const description =
+        "Ein Fehler ist beim Ausführen des Befehls aufgetreten.";
     
     const embed = new EmbedBuilder()
         .setColor(Color.RED)
