@@ -1,11 +1,13 @@
+import path from "node:path";
+import { fileURLToPath } from "node:url";
 import fs from "node:fs";
 
 /**
     Pfad zur `package.json`.
 */
-const PACKAGE_JSON_PATH = new URL(
-    "../../package.json",
-    import.meta.url
+const PACKAGE_JSON_PATH = path.join(
+    path.dirname(fileURLToPath(import.meta.url)),
+    "../../package.json"
 );
 
 /**
