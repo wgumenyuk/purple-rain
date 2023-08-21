@@ -85,12 +85,11 @@ export class Bot extends Client {
         logger.info(`Starte Purple Rain (${this.version})`);
 
         try {
-            // Loader ausführen
-            await loadEvents(this);
-            await loadCommands(this);
-
-            // Verbindung herstellen
-            await this.login(TOKEN);
+            await Promise.all([
+                loadEvents(this),
+                loadCommands(this),
+                this.login(TOKEN)
+            ]);
         } catch(error) {
             logger.error(error);
             process.exit(1);
