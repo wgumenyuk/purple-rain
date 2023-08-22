@@ -29,9 +29,13 @@ export const handler = async (bot: Bot, message: Message) => {
     const args = content.split(/\s+/g);
 
     const commandName = args
-        .shift()!
-        .slice(PREFIX.length)
+        .shift()
+        ?.slice(PREFIX.length)
         .toLowerCase();
+
+    if(!commandName) {
+        return;
+    }
 
     const command =
         bot.commands.get(commandName) ||
