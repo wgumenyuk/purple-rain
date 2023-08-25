@@ -24,7 +24,11 @@ const _isBotAlone = (botId: string, channel: VoiceBasedChannel | null) => {
 /**
     Wird ausgeführt, wenn ein Voice-Zustand sich aktualisiert.
 */
-export const handler = (bot: Bot, oldState: VoiceState, newState: VoiceState) => {
+export const handler = (
+    bot: Bot,
+    oldState: VoiceState,
+    newState: VoiceState
+) => {
     const botId = bot.user!.id;
     const guildId = oldState.guild.id;
 
