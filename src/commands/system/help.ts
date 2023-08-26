@@ -62,7 +62,7 @@ class HelpCommand extends Command {
             .map((command) => inlineCode(command.name))
             .join(", ");
 
-        const systemCommands =  commands
+        const systemCommands = commands
             .filter((command) => command.group === CommandGroup.SYSTEM)
             .sort((a, b) => a.name.localeCompare(b.name))
             .map((command) => inlineCode(command.name))
