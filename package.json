@@ -16,5 +16,8 @@
     "@types/node": "^20.11.25",
     "rimraf": "^5.0.5",
     "tsc-alias": "^1.8.8"
+  },
+  "dependencies": {
+    "pino": "^8.19.0"
   }
 }
