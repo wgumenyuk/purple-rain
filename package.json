@@ -2,7 +2,7 @@
   "name": "purple-rain",
   "version": "1.0.0",
   "description": "Monorepo für Purple Rain.",
-  "private": true,
   "type": "module",
+  "private": true,
   "scripts": {}
 }
