@@ -1,0 +1,12 @@
+{
+  "compilerOptions": {
+    "target": "esnext",
+    "module": "esnext",
+    "moduleResolution": "bundler",
+    "outDir": "./build",
+    "baseUrl": "./src",
+    "paths": {},
+    "skipLibCheck": true,
+    "strict": true
+  }
+}
