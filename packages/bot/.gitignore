@@ -1,2 +1,2 @@
-.env*
-!.env.example
+config.development.json
+config.production.json
