@@ -34,6 +34,11 @@ export type Config = {
   token: string;
 
   /**
+   * Discord-ID des Besitzers.
+  */
+  ownerId: string;
+
+  /**
    * Verbindungsdaten für Redis.
   */
   redis: {
