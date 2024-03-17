@@ -42,26 +42,30 @@ export const loadRedis = async function(this: Bot) {
 
   const { host, port, password } = this.config.redis;
 
-  this.db = new Redis({
+  const pub = new Redis({
     host,
     port,
     password,
     lazyConnect: true
   });
 
-  this.dbSub = this.db.duplicate();
+  const sub = pub.duplicate();
 
   try {
     await Promise.all([
-      this.db.connect(),
-      this.dbSub.connect(),
-      this.dbSub.subscribe(CHANNEL_NAME)
+      pub.connect(),
+      sub.connect(),
+      sub.subscribe(CHANNEL_NAME)
     ]);
   } catch(err) {
     this.log.fatal(err, "failed to connect to Redis database");
     process.exit(1);
   }
 
-  this.dbSub.on("message", handleMessage.bind(this));
+  sub.on("message", handleMessage.bind(this));
+
+  this.redis.pub = pub;
+  this.redis.sub = sub;
+
   this.log.info("connected to Redis database");
 };
