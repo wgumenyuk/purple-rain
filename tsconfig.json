@@ -1,0 +1,22 @@
+{
+  "compilerOptions": {
+    "target": "esnext",
+    "module": "esnext",
+    "moduleResolution": "bundler",
+    "outDir": "./build",
+    "baseUrl": "./src",
+    "paths": {
+      "$internal/*": [
+        "./internal/*"
+      ],
+      "$loaders/*": [
+        "./loaders/*"
+      ],
+      "$structs/*": [
+        "./structs/*"
+      ]
+    },
+    "skipLibCheck": true,
+    "strict": true
+  }
+}
