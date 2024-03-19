@@ -4,7 +4,7 @@ import fs from "node:fs/promises";
 import yaml from "yaml";
 
 // Types
-import type{ PurpleRain } from "$structs/purple-rain";
+import type { PurpleRain } from "$structs/purple-rain";
 
 /**
  * Konfiguration.
