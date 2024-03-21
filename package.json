@@ -1,0 +1,30 @@
+{
+  "name": "purple-rain",
+  "version": "2.0.0",
+  "description": "Maßgefertigter Bot für den Gentlemen's Club.",
+  "type": "module",
+  "main": "build/index.js",
+  "private": true,
+  "scripts": {
+    "clean": "rimraf build",
+    "build": "rimraf build && esbuild --format=esm --target=esnext --platform=node --outdir=build --minify-syntax $(find src -name '*.ts') && tsc-alias -f"
+  },
+  "author": "Wlad G. Gumenyuk",
+  "license": "GPL-3.0",
+  "devDependencies": {
+    "esbuild": "^0.20.2",
+    "pino-pretty": "^10.3.1",
+    "rimraf": "^5.0.5",
+    "tsc-alias": "^1.8.8"
+  },
+  "dependencies": {
+    "@discordjs/voice": "^0.16.1",
+    "@distube/ytpl": "^1.2.1",
+    "@distube/ytsr": "^2.0.0",
+    "discord.js": "^14.14.1",
+    "fast-glob": "^3.3.2",
+    "pino": "^8.19.0",
+    "yaml": "^2.4.1",
+    "ytdl-core": "^4.11.5"
+  }
+}
