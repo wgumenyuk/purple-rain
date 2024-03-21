@@ -3,6 +3,7 @@ import { Client, GatewayIntentBits } from "discord.js";
 // Intern
 import { logger } from "$structs/logger";
 import { loadConfig } from "$loaders/config";
+import { loadEvents } from "$loaders/events";
 
 // Types
 import type { Logger } from "pino";
@@ -55,7 +56,8 @@ export class PurpleRain extends Client {
 
     // Loader ausführen.
     await Promise.all([
-      loadConfig.call(this)
+      loadConfig.call(this),
+      loadEvents.call(this)
     ]);
 
     this.log.info("connecting to Discord");
