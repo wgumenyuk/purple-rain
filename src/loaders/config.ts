@@ -48,5 +48,5 @@ export async function loadConfig(this: PurpleRain) {
     process.exit(1);
   }
 
-  this.log.info("config loaded");
+  this.log.info("loaded config");
 };
