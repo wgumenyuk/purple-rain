@@ -27,6 +27,9 @@ const parentLogger = pino({
 /**
  * Erstellt einen neuen Child-Logger.
 */
-export function logger(options: ChildLoggerOptions, bindings: Bindings = {}) {
+export const logger = function(
+  options: ChildLoggerOptions,
+  bindings: Bindings = {}
+) {
   return parentLogger.child(bindings, options);
 };
