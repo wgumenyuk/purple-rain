@@ -1,3 +1,6 @@
+import { Colors, EmbedBuilder } from "discord.js";
+
+// Types
 import { logger } from "$structs/logger";
 
 // Types
@@ -104,8 +107,21 @@ export abstract class Command {
    * Überprüft, ob der Befehl ausgeführt werden kann.
   */
   public check(bot: PurpleRain, message: Message<true>, args: string[]) {
-    if(this.isOwnerOnly) {
-      return (message.author.id === bot.config.ownerId);
+    // Check für Owner-only Befehle.
+    if(this.isOwnerOnly && message.author.id !== bot.config.ownerId) {
+      this.log.warn(`${message.author.id} tried running an owner-only command`);
+
+      const embed = new EmbedBuilder()
+        .setColor(Colors.Red)
+        .setDescription("Dieser Befehl kann nur vom Besitzer ausgeführt werden.");
+
+      message.channel.send({
+        embeds: [
+          embed
+        ]
+      });
+      
+      return false;
     }
 
     return true;
