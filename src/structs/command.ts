@@ -38,6 +38,11 @@ export type CommandMeta = {
   usage: string;
 
   /**
+   * Beispiele zur Verwendung.
+  */
+  examples: string[];
+
+  /**
    * Liste von Aliassen.
   */
   aliases: string[];
@@ -74,6 +79,11 @@ export abstract class Command {
   public usage: string;
 
   /**
+   * Beispiele zur Verwendung.
+  */
+  public examples: string[];
+
+  /**
    * Liste von Aliassen.
   */
   public aliases: string[];
@@ -90,6 +100,7 @@ export abstract class Command {
     this.name = meta.name.toLowerCase();
     this.description = meta.description;
     this.usage = meta.usage;
+    this.examples = meta.examples;
     this.aliases = meta.aliases;
     this.isOwnerOnly = meta.isOwnerOnly || false;
 
