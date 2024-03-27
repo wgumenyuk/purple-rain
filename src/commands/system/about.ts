@@ -22,7 +22,7 @@ export const command = new class extends Command {
       description: "Zeigt Informationen über Purple Rain an.",
       usage: "about",
       examples: [],
-      aliases: [],
+      aliases: []
     });
   }
 
