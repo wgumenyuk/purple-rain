@@ -29,10 +29,10 @@ export abstract class MusicCommand extends Command {
 
     const voiceChannel = message.member.voice.channel;
 
-    // Check nach vorhandenem Voicechannel.
+    // Check nach vorhandenem Voice-Channel.
     if(!voiceChannel) {
       const description =
-        "Du musst in einem Voicechannel sein, um " +
+        "Du musst in einem Voice-Channel sein, um " +
         "diesen Befehl verwenden zu können.";
       
       const embed = new EmbedBuilder()
@@ -67,10 +67,10 @@ export abstract class MusicCommand extends Command {
       return false;
     }
 
-    // Check, ob man dem Voicechannel beitreten kann.
+    // Check, ob man dem Voice-Channel beitreten kann.
     if(!voiceChannel.joinable) {
       const description =
-        "Das Beitreten in diesen Voicechanel ist " +
+        "Das Beitreten in diesen Voice-Channel ist " +
         "momentan nicht möglich. Stimmen die Berechtigungen?";
       
       const embed = new EmbedBuilder()
@@ -93,7 +93,7 @@ export abstract class MusicCommand extends Command {
     ) {
       const description =
         "Es ist gerade keine Musikqueue vorhanden. Verwende `join` " +
-        "oder `play`, um Purple Rain in den Voicechannel zu holen.";
+        "oder `play`, um Purple Rain in den Voice-Channel zu holen.";
       
       const embed = new EmbedBuilder()
         .setColor(Colors.Red)
@@ -108,10 +108,10 @@ export abstract class MusicCommand extends Command {
       return false;
     }
 
-    // Check, ob der Nutzer im selben Voicechannel ist wie Purple Rain.
+    // Check, ob der Nutzer im selben Voice-Channel ist wie Purple Rain.
     if(!voiceChannel.members.has(bot.user.id)) {
       const description =
-        "Du musst im selben Voicechannel wie " +
+        "Du musst im selben Voice-Channel wie " +
         "Purple Rain sein, um diesen Befehl verwenden zu können.";
       
       const embed = new EmbedBuilder()
