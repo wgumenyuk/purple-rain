@@ -1,5 +1,5 @@
 import assert from "node:assert";
-import { Colors, EmbedBuilder } from "discord.js";
+import { ChannelType, Colors, EmbedBuilder } from "discord.js";
 
 // Intern
 import { Command } from "$structs/command";
@@ -35,6 +35,25 @@ export abstract class MusicCommand extends Command {
         "Du musst in einem Voicechannel sein, um " +
         "diesen Befehl verwenden zu können.";
       
+      const embed = new EmbedBuilder()
+        .setColor(Colors.Red)
+        .setDescription(description);
+
+      message.channel.send({
+        embeds: [
+          embed
+        ]
+      });
+
+      return false;
+    }
+
+    // Check, ob der Voice-Channel vom Typ `GuildVoice` ist.
+    if(voiceChannel.type !== ChannelType.GuildVoice) {
+      const description =
+        "Das Beitreten in diesen Voice-Channel ist momentan nicht möglich. " +
+        "Handelt es sich um einen gewöhnlichen Voice-Channel?";
+
       const embed = new EmbedBuilder()
         .setColor(Colors.Red)
         .setDescription(description);
