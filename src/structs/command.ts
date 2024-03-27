@@ -9,92 +9,92 @@ import type { Logger } from "pino";
 import type { PurpleRain } from "$structs/purple-rain";
 
 /**
- * Datei, die einen Befehl exportiert.
+  Datei, die einen Befehl exportiert.
 */
 type CommandFile = {
   /**
-   * Exportierter Befehl.
+    Exportierter Befehl.
   */
   command: Command;
 };
 
 /**
- * Befehls-Meta.
+  Befehls-Meta.
 */
 export type CommandMeta = {
   /**
-   * Name.
+    Name.
   */
   name: string;
 
   /**
-   * Beschreibung.
+    Beschreibung.
   */
   description: string;
 
   /**
-   * Syntax.
+    Syntax.
   */
   usage: string;
 
   /**
-   * Beispiele zur Verwendung.
+    Beispiele zur Verwendung.
   */
   examples: string[];
 
   /**
-   * Liste von Aliassen.
+    Liste von Aliassen.
   */
   aliases: string[];
 
   /**
-   * Ob der Befehl nur vom Besitzer ausgeführt werden kann.
-   * @default false
+    Ob der Befehl nur vom Besitzer ausgeführt werden kann.
+    @default false
   */
   isOwnerOnly?: boolean;
 };
 
 /**
- * Abstrakter Befehl.
+  Abstrakter Befehl.
 */
 export abstract class Command {
   /**
-   * Logger für den Befehl.
+    Logger für den Befehl.
   */
   public log: Logger;
 
   /**
-   * Name.
+    Name.
   */
   public name: string;
 
   /**
-   * Beschreibung.
+    Beschreibung.
   */
   public description: string;
 
   /**
-   * Syntax.
+    Syntax.
   */
   public usage: string;
 
   /**
-   * Beispiele zur Verwendung.
+    Beispiele zur Verwendung.
   */
   public examples: string[];
 
   /**
-   * Liste von Aliassen.
+    Liste von Aliassen.
   */
   public aliases: string[];
 
   /**
-   * Ob der Befehl nur vom Besitzer ausgeführt werden kann.
+    Ob der Befehl nur vom Besitzer ausgeführt werden kann.
   */
   public isOwnerOnly: boolean;
 
   /**
-   * Konstruktor.
+    Konstruktor.
   */
   constructor(meta: CommandMeta) {
     this.name = meta.name.toLowerCase();
@@ -115,7 +115,7 @@ export abstract class Command {
   }
 
   /**
-   * Überprüft, ob der Befehl ausgeführt werden kann.
+    Überprüft, ob der Befehl ausgeführt werden kann.
   */
   public check(bot: PurpleRain, message: Message<true>, args: string[]) {
     // Check für Owner-only Befehle.
@@ -139,7 +139,7 @@ export abstract class Command {
   }
 
   /**
-   * Führt den Befehl aus.
+    Führt den Befehl aus.
   */
   public abstract run(
     bot: PurpleRain,
@@ -149,7 +149,7 @@ export abstract class Command {
 };
 
 /**
- * Überprüft, ob ein Objekt eine Datei ist, die einen Befehl exportiert.
+  Überprüft, ob ein Objekt eine Datei ist, die einen Befehl exportiert.
 */
 export const isCommand = function(object: unknown): object is CommandFile {
   return (

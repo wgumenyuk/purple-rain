@@ -6,12 +6,12 @@ import type { Message } from "discord.js";
 import type { EventHandler } from "$structs/event-handler";
 
 /**
- * Name des Events.
+  Name des Events.
 */
 export const name = Events.MessageCreate;
 
 /**
- * Wird ausgeführt, wenn Purple Rain eine Nachricht erhält.
+  Wird ausgeführt, wenn Purple Rain eine Nachricht erhält.
 */
 export const handle: EventHandler = async function(message: Message) {
   if(!message.inGuild() || message.author.bot) {

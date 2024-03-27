@@ -7,27 +7,27 @@ import yaml from "yaml";
 import type { PurpleRain } from "$structs/purple-rain";
 
 /**
- * Konfiguration.
+  Konfiguration.
 */
 export type Config = {
   /**
-   * Discord-Token.
+    Discord-Token.
   */
   token: string;
 
   /**
-   * Discord-ID des Besitzers.
+    Discord-ID des Besitzers.
   */
   ownerId: string;
 
   /**
-   * Präfix, auf den Purple Rain reagiert.
+    Präfix, auf den Purple Rain reagiert.
   */
   prefix: string;
 };
 
 /**
- * Pfad zur `config.yaml`.
+  Pfad zur `config.yaml`.
 */
 const CONFIG_PATH = path.join(
   path.dirname(fileURLToPath(import.meta.url)),
@@ -35,7 +35,7 @@ const CONFIG_PATH = path.join(
 );
 
 /**
- * Lädt die Konfiguration.
+  Lädt die Konfiguration.
 */
 export async function loadConfig(this: PurpleRain) {
   this.log.info("loading config");

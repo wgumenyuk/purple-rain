@@ -1,12 +1,12 @@
 import type { PurpleRain } from "$structs/purple-rain";
 
 /**
- * Handle-Funktion.
+  Handle-Funktion.
 */
 export type EventHandler = (this: PurpleRain, ...args: any) => Promise<void> | void;
 
 /**
- * Datei, die einen Event-Handler exportiert.
+  Datei, die einen Event-Handler exportiert.
 */
 type EventHandlerFile = {
   /**
@@ -21,7 +21,7 @@ type EventHandlerFile = {
 };
 
 /**
- * Überprüft, ob ein Objekt eine Datei ist, die einen Event-Handler exportiert.
+  Überprüft, ob ein Objekt eine Datei ist, die einen Event-Handler exportiert.
 */
 export const isEventHandler = function(object: unknown): object is EventHandlerFile {
   return (

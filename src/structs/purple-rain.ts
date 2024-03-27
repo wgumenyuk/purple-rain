@@ -12,7 +12,7 @@ import type { Config } from "$loaders/config";
 import type { Command } from "$structs/command";
 
 /**
- * Intents für Purple Rain.
+  Intents für Purple Rain.
 */
 const INTENTS: GatewayIntentBits[] = [
   GatewayIntentBits.Guilds,
@@ -23,32 +23,32 @@ const INTENTS: GatewayIntentBits[] = [
 ];
 
 /**
- * Purple Rain.
+  Purple Rain.
 */
 export class PurpleRain extends Client {
   /**
-   * Konfiguration.
+    Konfiguration.
   */
   // @ts-expect-error: `config` wird mit `loadConfig()` geladen.
   public config: Config = null;
 
   /**
-   * Logger.
+    Logger.
   */
   public log: Logger;
 
   /**
-   * Kollektion von Befehlen.
+    Kollektion von Befehlen.
   */
   public commands: Collection<string, Command>;
 
   /**
-   * Kollektion von Aliassen.
+    Kollektion von Aliassen.
   */
   public aliases: Collection<string, string>;
 
   /**
-   * Konstruktor.
+    Konstruktor.
   */
   constructor() {
     super({
@@ -64,7 +64,7 @@ export class PurpleRain extends Client {
   }
 
   /**
-   * Initialisiert Purple Rain.
+    Initialisiert Purple Rain.
   */
   public async init() {
     this.log.info("initializing");

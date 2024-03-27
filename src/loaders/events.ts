@@ -9,7 +9,7 @@ import { isEventHandler } from "$structs/event-handler";
 import type { PurpleRain } from "$structs/purple-rain";
 
 /**
- * Glob-Pfad zum `/events`-Ordner.
+  Glob-Pfad zum `/events`-Ordner.
 */
 const EVENTS_PATH = path.join(
   path.dirname(fileURLToPath(import.meta.url)),
@@ -17,7 +17,7 @@ const EVENTS_PATH = path.join(
 );
 
 /**
- * Lädt alle Events.
+  Lädt alle Events.
 */
 export const loadEvents = async function(this: PurpleRain) {
   this.log.info("loading events");

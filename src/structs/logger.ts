@@ -25,7 +25,7 @@ const parentLogger = pino({
 });
 
 /**
- * Erstellt einen neuen Child-Logger.
+  Erstellt einen neuen Child-Logger.
 */
 export const logger = function(
   options: ChildLoggerOptions,

@@ -10,18 +10,18 @@ import type { CommandMeta } from "$structs/command";
 import type { PurpleRain } from "$structs/purple-rain";
 
 /**
- * Abstrakter Musikbefehl.
+  Abstrakter Musikbefehl.
 */
 export abstract class MusicCommand extends Command {
   /**
-   * Konstruktor.
+    Konstruktor.
   */
   constructor(meta: CommandMeta) {
     super(meta);
   }
 
   /**
-   * Überprüft, ob der Befehl ausgeführt werden kann.
+    Überprüft, ob der Befehl ausgeführt werden kann.
   */
   public check(bot: PurpleRain, message: Message<true>, args: string[]) {
     assert(bot.user, "bot user is `null`");

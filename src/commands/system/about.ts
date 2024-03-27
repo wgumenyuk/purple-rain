@@ -9,12 +9,12 @@ import type { Message } from "discord.js";
 import type { PurpleRain } from "$structs/purple-rain";
 
 /**
- * `about`-Befehl.
- * Zeigt Informationen über Purple Rain an.
+  `about`-Befehl.
+  Zeigt Informationen über Purple Rain an.
 */
 export const command = new class extends Command {
   /**
-   * Konstruktor.
+    Konstruktor.
   */
   constructor() {
     super({
@@ -27,7 +27,7 @@ export const command = new class extends Command {
   }
 
   /**
-   * Führt den Befehl aus.
+    Führt den Befehl aus.
   */
   public run(bot: PurpleRain, message: Message<true>) {
     assert(bot.user, "bot user is `null`");

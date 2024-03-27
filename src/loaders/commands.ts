@@ -10,7 +10,7 @@ import type { Command } from "$structs/command";
 import type { PurpleRain } from "$structs/purple-rain";
 
 /**
- * Glob-Pfad zum `/commands`-Ordner.
+  Glob-Pfad zum `/commands`-Ordner.
 */
 const COMMANDS_PATH = path.join(
   path.dirname(fileURLToPath(import.meta.url)),
@@ -18,7 +18,7 @@ const COMMANDS_PATH = path.join(
 );
 
 /**
- * Registriert einen Befehl.
+  Registriert einen Befehl.
 */
 const addCommand = function(this: PurpleRain, command: Command, filePath: string) {
   const { name } = command;
@@ -32,7 +32,7 @@ const addCommand = function(this: PurpleRain, command: Command, filePath: string
 };
 
 /**
- * Registriert die Aliasse eines Befehls.
+  Registriert die Aliasse eines Befehls.
 */
 const addAliases = function(this: PurpleRain, command: Command, filePath: string) {
   for(const alias of command.aliases) {
@@ -46,7 +46,7 @@ const addAliases = function(this: PurpleRain, command: Command, filePath: string
 };
 
 /**
- * Lädt alle Befehle.
+  Lädt alle Befehle.
 */
 export const loadCommands = async function(this: PurpleRain) {
   this.log.info("loading commands");
