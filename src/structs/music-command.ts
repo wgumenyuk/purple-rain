@@ -67,6 +67,28 @@ export abstract class MusicCommand extends Command {
       return false;
     }
 
+    if(
+      this.name !== "join" &&
+      this.name !== "play" &&
+      !bot.queues.has(message.guild.id)
+    ) {
+      const description =
+        "Es ist gerade keine Musikqueue vorhanden. Verwende `join` " +
+        "oder `play`, um Purple Rain in den Voicechannel zu holen.";
+      
+      const embed = new EmbedBuilder()
+        .setColor(Colors.Red)
+        .setDescription(description);
+
+      message.channel.send({
+        embeds: [
+          embed
+        ]
+      });
+
+      return false;
+    }
+
     // Check, ob der Nutzer im selben Voicechannel ist wie Purple Rain.
     if(!voiceChannel.members.has(bot.user.id)) {
       const description =
