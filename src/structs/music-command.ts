@@ -23,8 +23,8 @@ export abstract class MusicCommand extends Command {
   /**
     Überprüft, ob der Befehl ausgeführt werden kann.
   */
-  public check(bot: PurpleRain, message: Message<true>) {
+  public check(bot: PurpleRain, message: Message<true>, args: string[]) {
     // TODO: Checks ausführen.
-    return super.check(bot, message);
+    return super.check(bot, message, args);
   }
 };

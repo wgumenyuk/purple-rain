@@ -117,7 +117,7 @@ export abstract class Command {
   /**
     Überprüft, ob der Befehl ausgeführt werden kann.
   */
-  public check(bot: PurpleRain, message: Message<true>) {
+  public check(bot: PurpleRain, message: Message<true>, args: string[]) {
     // Check für Owner-only Befehle.
     if(this.isOwnerOnly && message.author.id !== bot.config.ownerId) {
       this.log.warn(`${message.author.id} tried running an owner-only command`);
