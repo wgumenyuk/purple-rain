@@ -124,7 +124,7 @@ export abstract class Command {
 
       const embed = new EmbedBuilder()
         .setColor(Colors.Red)
-        .setDescription("Dieser Befehl kann nur vom Besitzer ausgeführt werden.");
+        .setDescription("Du hast keine Berechtigung, diesen Befehl auszuführen.");
 
       message.channel.send({
         embeds: [
