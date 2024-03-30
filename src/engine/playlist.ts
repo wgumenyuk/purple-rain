@@ -11,14 +11,14 @@ type PlaylistMeta = {
   url: string;
 
   /**
-    Titel.
-  */
-  title: string;
-
-  /**
     Thumbnail-URL.
   */
   thumbnailUrl: string;
+
+  /**
+    Titel.
+  */
+  title: string;
 
   /**
     Liste von Liedern.
@@ -41,15 +41,15 @@ export class Playlist {
   public url: string;
 
   /**
-    Titel.
-  */
-  public title: string;
-  
-  /**
     Thumbnail-URL.
   */
   public thumbnailUrl: string;
-  
+
+  /**
+    Titel.
+  */
+  public title: string;
+
   /**
     Liste von Liedern.
   */
