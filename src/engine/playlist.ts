@@ -11,16 +11,6 @@ type PlaylistMeta = {
   url: string;
 
   /**
-    Channel-ID.
-  */
-  channelId: string;
-
-  /**
-    Name des Channels.
-  */
-  channel: string;
-
-  /**
     Titel.
   */
   title: string;
@@ -51,16 +41,6 @@ export class Playlist {
   public url: string;
 
   /**
-    Channel-ID.
-  */
-  public channelId: string;
-
-  /**
-    Name des Channels.
-  */
-  public channel: string;
-
-  /**
     Titel.
   */
   public title: string;
@@ -85,8 +65,6 @@ export class Playlist {
   */
   constructor(meta: PlaylistMeta) {
     this.url = meta.url;
-    this.channelId = meta.channelId;
-    this.channel = meta.channel;
     this.title = meta.title;
     this.thumbnailUrl = meta.thumbnailUrl;
     this.songs = meta.songs;
