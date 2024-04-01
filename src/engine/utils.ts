@@ -9,7 +9,7 @@ export const parseDuration = function(duration: string) {
     .map(parseInt);
 
   if(units.length < 1) {
-    return NaN;
+    return null;
   }
 
   const seconds = units.pop() || 0;
@@ -20,7 +20,7 @@ export const parseDuration = function(duration: string) {
     seconds +
     minutes * 60 +
     hours * 3600
-  );
+  ) || null;
 };
 
 /**
