@@ -7,7 +7,7 @@ export const parseDuration = function(duration: string) {
     .map(parseInt);
 
   if(units.length < 1) {
-    return 0;
+    return NaN;
   }
 
   const seconds = units.pop() || 0;
