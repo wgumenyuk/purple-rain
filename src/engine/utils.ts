@@ -1,3 +1,5 @@
+import { thumbnail as Thumbnail } from "ytdl-core";
+
 /**
   Wandelt einen Zeitstempel-String in die Anzahl der Sekunden um.
 */
@@ -19,4 +21,26 @@ export const parseDuration = function(duration: string) {
     minutes * 60 +
     hours * 3600
   );
+};
+
+/**
+  Findet das Thumbnail mit der höchsten Auflösung und gibt dessen URL zurück.
+*/
+export const getBestThumbnailUrl = function(thumbnails: Thumbnail[]) {
+  if(thumbnails.length === 0) {
+    return null;
+  }
+
+  if(thumbnails.length === 1) {
+    return thumbnails[0].url;
+  }
+
+  const bestWidth = Math.max(
+    ...thumbnails.map((thumbnail) => thumbnail.width)
+  );
+  
+  const bestThumbnail =
+    thumbnails.find((thumbnails) => thumbnails.width === bestWidth)!;
+
+  return bestThumbnail.url;
 };
