@@ -22,7 +22,7 @@ type SongMeta = {
   /**
     Thumbnail-URL.
   */
-  thumbnailUrl: string;
+  thumbnailUrl: string | null;
 
   /**
     Titel.
@@ -62,7 +62,7 @@ export class Song {
   /**
     Thumbnail-URL.
   */
-  public thumbnailUrl: string;
+  public thumbnailUrl: string | null;
 
   /**
     Titel.
