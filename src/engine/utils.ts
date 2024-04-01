@@ -3,7 +3,7 @@ import { thumbnail as Thumbnail } from "ytdl-core";
 /**
   Wandelt einen Zeitstempel-String in die Anzahl der Sekunden um.
 */
-export const parseDuration = function(timestamp: string) {
+export const parseTimestamp = function(timestamp: string) {
   const units = timestamp
     .split(":")
     .map(parseInt);
