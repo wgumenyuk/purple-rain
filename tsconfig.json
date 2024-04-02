@@ -9,6 +9,9 @@
       "$engine/*": [
         "engine/*"
       ],
+      "$engine": [
+        "engine/index.ts"
+      ],
       "$loaders/*": [
         "loaders/*"
       ],
