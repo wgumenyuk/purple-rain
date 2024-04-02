@@ -1,4 +1,4 @@
-import { thumbnail as Thumbnail } from "ytdl-core";
+import type { thumbnail as Thumbnail } from "ytdl-core";
 
 /**
   Wandelt einen Zeitstempel-String in die Anzahl der Sekunden um.
