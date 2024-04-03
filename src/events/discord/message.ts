@@ -1,5 +1,5 @@
 import { randomUUID as randomId } from "node:crypto";
-import { Events, EmbedBuilder, Colors, inlineCode } from "discord.js";
+import { ChannelType, Events, EmbedBuilder, Colors, inlineCode } from "discord.js";
 
 // Types
 import type { Message } from "discord.js";
@@ -14,7 +14,11 @@ export const name = Events.MessageCreate;
   Wird ausgeführt, wenn Purple Rain eine Nachricht erhält.
 */
 export const handle: EventHandler = async function(message: Message) {
-  if(!message.inGuild() || message.author.bot) {
+  if(
+    !message.inGuild() ||
+    message.channel.type !== ChannelType.GuildText ||
+    message.author.bot
+  ) {
     return;
   }
 
