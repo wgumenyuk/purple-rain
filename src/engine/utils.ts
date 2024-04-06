@@ -8,7 +8,7 @@ export const parseTimestamp = function(timestamp: string) {
     .split(":")
     .map(parseInt);
 
-  if(units.length < 1) {
+  if(units.length === 0) {
     return null;
   }
 
