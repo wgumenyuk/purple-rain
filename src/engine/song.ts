@@ -1,4 +1,4 @@
-import type { User } from "discord.js";
+import type { GuildMember } from "discord.js";
 
 /**
   Lied-Meta.
@@ -37,7 +37,7 @@ type SongMeta = {
   /**
     Nutzer, der das Lied angefordert hat.
   */
-  user: User;
+  user: GuildMember;
 };
 
 /**
@@ -77,7 +77,7 @@ export class Song {
   /**
     Nutzer, der das Lied angefordert hat.
   */
-  public user: User;
+  public user: GuildMember;
 
   /**
     Konstruktor.

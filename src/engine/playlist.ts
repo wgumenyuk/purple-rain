@@ -1,4 +1,4 @@
-import type { User } from "discord.js";
+import type { GuildMember } from "discord.js";
 import type { Song } from "$engine/song";
 
 /**
@@ -28,7 +28,7 @@ type PlaylistMeta = {
   /**
     Nutzer, der die Playlist angefordert hat.
   */
-  user: User;
+  user: GuildMember;
 };
 
 /**
@@ -58,7 +58,7 @@ export class Playlist {
   /**
     Nutzer, der die Playlist angefordert hat.
   */
-  public user: User;  
+  public user: GuildMember;  
 
   /**
     Konstruktor.
