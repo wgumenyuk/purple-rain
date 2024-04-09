@@ -59,6 +59,13 @@ export abstract class Command {
   }
 
   /**
+    Überprüft, ob der Befehl ausgeführt werden kann.
+  */
+  public check(bot: PurpleRain, message: Message<true>, args: string[]) {
+    return true;
+  }
+
+  /**
     Führt den Befehl aus.
   */
   public abstract run(
