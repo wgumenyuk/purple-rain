@@ -8,6 +8,9 @@ devDependencies:
   '@swc/cli':
     specifier: ^0.3.12
     version: 0.3.12(@swc/core@1.4.13)
+  '@swc/core':
+    specifier: ^1.4.13
+    version: 1.4.13
 
 packages:
 
