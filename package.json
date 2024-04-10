@@ -5,5 +5,7 @@
   "main": "build/index.js",
   "private": true,
   "scripts": {},
-  "devDependencies": {}
+  "devDependencies": {
+    "@swc/cli": "^0.3.12"
+  }
 }
