@@ -1,7 +1,7 @@
 ---
 name: Bug Report
 about: Erstelle einen Bereicht, der uns hilft, Purple Rain zu verbessern.
-title: 'bug:'
+title: 'Bug:'
 labels: bug
 assignees: wgumenyuk
 

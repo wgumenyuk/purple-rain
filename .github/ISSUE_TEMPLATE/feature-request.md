@@ -1,7 +1,7 @@
 ---
 name: Feature Request
 about: Schlage eine Idee für Purple Rain vor.
-title: 'feat:'
+title: 'Feature:'
 labels: enhancement
 assignees: wgumenyuk
 
