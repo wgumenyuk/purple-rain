@@ -3,6 +3,15 @@
     "target": "esnext",
     "parser": {
       "syntax": "typescript"
+    },
+    "baseUrl": "src",
+    "paths": {
+      "$loaders/*": [
+        "loaders/*"
+      ],
+      "$structs/*": [
+        "structs/*"
+      ]
     }
   },
   "minify": true
