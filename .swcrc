@@ -4,6 +4,5 @@
     "parser": {
       "syntax": "typescript"
     }
-  },
-  "minify": true
+  }
 }
