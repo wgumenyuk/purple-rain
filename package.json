@@ -6,7 +6,7 @@
   "private": true,
   "scripts": {
     "clean": "rimraf build",
-    "build": "rimraf build && swc src --strip-leading-paths -s -d build && tsc-alias -f"
+    "build": "rimraf build && swc src --ignore **/*.d.ts --strip-leading-paths -s -d build && tsc-alias -f"
   },
   "devDependencies": {
     "@swc/cli": "^0.3.12",
