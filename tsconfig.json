@@ -4,6 +4,12 @@
     "module": "esnext",
     "moduleResolution": "bundler",
     "outDir": "build",
+    "baseUrl": "src",
+    "paths": {
+      "$loaders/*": [
+        "loaders/*"
+      ]
+    },
     "esModuleInterop": true,
     "noEmit": true,
     "skipLibCheck": true,
