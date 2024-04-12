@@ -8,6 +8,9 @@
     "paths": {
       "$loaders/*": [
         "loaders/*"
+      ],
+      "$structs/*": [
+        "structs/*"
       ]
     },
     "esModuleInterop": true,
