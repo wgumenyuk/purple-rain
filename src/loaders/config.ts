@@ -31,7 +31,7 @@ const configSchema = z.object({
   */
   token: z
     .string()
-    .length(59),
+    .length(70),
 
   /**
     Besitzer-ID.
