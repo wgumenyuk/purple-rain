@@ -54,6 +54,12 @@ export const handle: EventHandler<Events.MessageCreate> = async function(
   }
 
   try {
+    const isCheckOk = command.check(bot, message, args);
+
+    if(!isCheckOk) {
+      return;
+    }
+
     await command.run(bot, message, args);
   } catch(err) {
     if(err instanceof Error) {
