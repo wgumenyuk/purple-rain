@@ -3,6 +3,7 @@ import { Client, GatewayIntentBits as Intents } from "discord.js";
 // Intern
 import { createLogger } from "$structs/logger";
 import { loadConfig } from "$loaders/config";
+import { loadEvents } from "$loaders/events";
 
 // Types
 import type { Logger } from "pino";
@@ -55,7 +56,8 @@ export class PurpleRain extends Client {
 
     // Loader ausführen.
     await Promise.allSettled([
-      loadConfig(this)
+      loadConfig(this),
+      loadEvents(this)
     ]);
 
     try {
