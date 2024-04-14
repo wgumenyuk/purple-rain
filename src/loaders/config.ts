@@ -23,22 +23,31 @@ const configSchema = z.object({
     Prefix, auf den Purple Rain reagiert.
   */
   prefix: z
-    .string()
-    .length(1),
+    .string({
+      invalid_type_error: "`prefix` must be a string",
+      required_error: "`prefix` must be defined"
+    })
+    .length(1, "`prefix` must be 1 character long"),
 
   /**
     Discord-Token.
   */
   token: z
-    .string()
-    .length(70),
+    .string({
+      invalid_type_error: "`token` must be a string",
+      required_error: "`token` must be defined"
+    })
+    .length(70, "`token` must be 70 characters long"),
 
   /**
     Besitzer-ID.
   */
   ownerId: z
-    .string()
-    .length(18)
+    .string({
+      invalid_type_error: "`ownerId` must be a string",
+      required_error: "`ownerId` must be defined"
+    })
+    .length(18, "`ownerId` must be 18 characters long")
 });
 
 /**
