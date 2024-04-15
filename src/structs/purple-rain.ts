@@ -8,6 +8,7 @@ import {
 import { createLogger } from "$structs/logger";
 import { loadConfig } from "$loaders/config";
 import { loadEvents } from "$loaders/events";
+import { loadCommands } from "$loaders/commands";
 
 // Types
 import type { Logger } from "pino";
@@ -75,7 +76,8 @@ export class PurpleRain extends Client {
     // Loader ausführen.
     await Promise.allSettled([
       loadConfig(this),
-      loadEvents(this)
+      loadEvents(this),
+      loadCommands(this)
     ]);
 
     try {
