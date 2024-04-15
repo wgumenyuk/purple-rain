@@ -1,5 +1,9 @@
-import { Client, GatewayIntentBits as Intents } from "discord.js";
-
+import {
+  Client,
+  Collection,
+  GatewayIntentBits as Intents
+} from "discord.js";
+  
 // Intern
 import { createLogger } from "$structs/logger";
 import { loadConfig } from "$loaders/config";
@@ -7,6 +11,7 @@ import { loadEvents } from "$loaders/events";
 
 // Types
 import type { Logger } from "pino";
+import type { Command } from "$structs/command";
 import type { Config } from "$loaders/config";
 
 /**
@@ -36,6 +41,16 @@ export class PurpleRain extends Client {
   public log: Logger;
 
   /**
+    Kollektion von Befehlen.
+  */
+  public commands: Collection<string, Command>;
+
+  /**
+    Kollektion von Aliassen.
+  */
+  public aliases: Collection<string, string>;
+
+  /**
     Konstruktor.
   */
   constructor() {
@@ -46,6 +61,9 @@ export class PurpleRain extends Client {
     this.log = createLogger({
       msgPrefix: "[bot] "
     });
+
+    this.commands = new Collection();
+    this.aliases = new Collection();
   }
 
   /**
