@@ -1,0 +1,59 @@
+import type { Awaitable, Message } from "discord.js";
+import type { PurpleRain } from "$structs/purple-rain";
+
+/**
+  Meta eines Befehls.
+*/
+type CommandMeta = {
+  [ K in keyof Command as Exclude<K, "run" | "check"> ]: Command[K];
+};
+
+/**
+  Abstrakter Befehl.
+*/
+export abstract class Command {
+  /**
+    Name.
+  */
+  public name: string;
+
+  /**
+    Liste von Aliassen.
+  */
+  public aliases: string[];
+
+  /**
+    Beschreibung.
+  */
+  public description: string;
+
+  /**
+    Syntax des Befehls.
+  */
+  public usage: string;
+
+  /**
+    Liste von Beispielen zur Verwendung.
+  */
+  public examples: string[];
+
+  /**
+    Konstruktor.
+  */
+  constructor(meta: CommandMeta) {
+    this.name = meta.name;
+    this.aliases = meta.aliases;
+    this.description = meta.description;
+    this.usage = meta.usage;
+    this.examples = meta.examples;
+  }
+
+  /**
+    Führt den Befehl aus.
+  */
+  public abstract run(
+    bot: PurpleRain,
+    message: Message<true>,
+    args: string[]
+  ): Awaitable<void>;
+};
