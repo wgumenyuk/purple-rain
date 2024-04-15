@@ -2,6 +2,16 @@ import type { Awaitable, Message } from "discord.js";
 import type { PurpleRain } from "$structs/purple-rain";
 
 /**
+  Datei, die einen Befehl exportiert.
+*/
+type CommandFile = {
+  /**
+    Exportierter Befehl.
+  */
+  command: Command;
+};
+
+/**
   Meta eines Befehls.
 */
 type CommandMeta = {
@@ -56,4 +66,16 @@ export abstract class Command {
     message: Message<true>,
     args: string[]
   ): Awaitable<void>;
+};
+
+/**
+  Überprüft, ob ein Objekt eine Datei ist, die einen Befehl exportiert.
+*/
+export const isCommandFile = function(object: unknown): object is CommandFile {
+  return (
+    !!object &&
+    typeof object === "object" &&
+    "command" in object &&
+    object.command instanceof Command
+  );
 };
