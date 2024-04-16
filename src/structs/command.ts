@@ -51,8 +51,8 @@ export abstract class Command {
     Konstruktor.
   */
   constructor(meta: CommandMeta) {
-    this.name = meta.name;
-    this.aliases = meta.aliases;
+    this.name = meta.name.toLowerCase();
+    this.aliases = meta.aliases.map((alias) => alias.toLowerCase());
     this.description = meta.description;
     this.usage = meta.usage;
     this.examples = meta.examples;
