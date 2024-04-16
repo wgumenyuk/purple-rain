@@ -1,4 +1,4 @@
-import { Events } from "discord.js";
+import { ChannelType, Events } from "discord.js";
 
 // Types
 import type { EventHandler } from "$structs/event-handler";
@@ -15,7 +15,11 @@ export const handle: EventHandler<Events.MessageCreate> = async function(
   bot,
   message
 ) {
-  if(!message.inGuild() || message.author.bot) {
+  if(message.author.bot) {
+    return;
+  }
+
+  if(!message.inGuild() || message.channel.type !== ChannelType.GuildText) {
     return;
   }
 
