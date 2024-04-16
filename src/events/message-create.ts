@@ -49,13 +49,15 @@ export const handle: EventHandler<Events.MessageCreate> = async function(
     bot.commands.get(bot.aliases.get(commandName));
 
   if(!command) {
-    // TODO
+    bot.emit("commandNotFound", message, commandName);
     return;
   }
 
   try {
     await command.run(bot, message, args);
   } catch(err) {
-    // TODO
+    if(err instanceof Error) {
+      bot.emit("commandError", message, command, err);
+    }
   }
 };
