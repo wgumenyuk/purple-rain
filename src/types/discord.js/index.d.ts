@@ -1,7 +1,10 @@
 declare module "discord.js" {
   // Events erweitern.
   export interface ClientEvents {
-    // TODO
+    commandNotFound: [
+      message: Message<true>,
+      commandName: string
+    ];
   }
 }
 
