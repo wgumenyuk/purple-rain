@@ -1,3 +1,6 @@
+import { Colors, EmbedBuilder, inlineCode } from "discord.js";
+
+// Intern
 import { Command } from "$structs/command";
 
 // Types
@@ -31,7 +34,37 @@ export const command = new class extends Command {
     Gibt eine Embed mit allgemeiner Hilfe zum Bot zurück.
   */
   private generalHelp(bot: PurpleRain, message: Message<true>) {
-    // TODO
+    const botUser = bot.user!;
+
+    const description =
+      "Purple Rain ist ein maßgefertigter Musikbot für den " +
+      "Gentlemen's Club.\n" +
+      // TODO: Evtl. keine Markdown-Unterstützung.
+      "> Verwende `help [Befehl]`, um genauere Informationen über einen " +
+      "Befehl zu erhalten.";
+
+    const embed = new EmbedBuilder()
+      .setColor(Colors.Purple)
+      .setThumbnail(botUser.displayAvatarURL())
+      .setDescription(description)
+      .addFields([
+        {
+          name: "Prefix",
+          value: inlineCode(bot.config.prefix),
+          inline: true  
+        },
+        {
+          name: "Befehle",
+          value: `${bot.commands.size}`,
+          inline: true
+        }
+      ]);
+
+    message.channel.send({
+      embeds: [
+        embed
+      ]
+    });
   }
 
   /**
@@ -42,7 +75,63 @@ export const command = new class extends Command {
     message: Message<true>,
     args: string[]
   ) {
-    // TODO
+    const commandName = args
+      .shift()!
+      .toLowerCase();
+
+    const command =
+      bot.commands.get(commandName) ||
+      // @ts-expect-error: `undefined` ist hier kein Problem.
+      bot.commands.get(bot.aliases.get(commandName));
+
+    if(!command) {
+      bot.emit("commandNotFound", message, commandName);
+      return;
+    }
+
+    const botUser = bot.user!;
+    const member = message.member!;
+
+    const embed = new EmbedBuilder()
+      .setColor(Colors.Purple)
+      .setAuthor({
+        iconURL: member.displayAvatarURL(),
+        name: "Hilfe"
+      })
+      .setThumbnail(botUser.displayAvatarURL())
+      .setTitle(`Hilfe zu ${inlineCode(command.name)}`)
+      .setDescription(command.description);
+
+    // Aliasse hinzufügen, falls vorhanden.
+    if(command.aliases.length > 0) {
+      const aliases = command.aliases
+        .map(inlineCode)
+        .join(", ");
+
+      embed.addFields({
+        name: (command.aliases.length === 1) ? "Alias" : "Aliasse",
+        value: aliases,
+        inline: true
+      });
+    }
+
+    // Beispiele hinzufügen, falls vorhanden.
+    if(command.examples.length > 0) {
+      const examples = command.examples
+        .map((example) => `- ${inlineCode(example)}`)
+        .join("\n");
+
+      embed.addFields({
+        name: (command.examples.length === 1) ? "Beispiel" : "Beispiele",
+        value: examples
+      });
+    }
+
+    message.channel.send({
+      embeds: [
+        embed
+      ]
+    });
   }
 
   /**
