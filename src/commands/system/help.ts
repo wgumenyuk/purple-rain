@@ -38,9 +38,8 @@ export const command = new class extends Command {
 
     const description =
       "Purple Rain ist ein maßgefertigter Musikbot für den " +
-      "Gentlemen's Club.\n" +
-      // TODO: Evtl. keine Markdown-Unterstützung.
-      "> Verwende `help [Befehl]`, um genauere Informationen über einen " +
+      "Gentlemen's Club.\n\n" +
+      "Verwende `help [Befehl]`, um genauere Informationen über einen " +
       "Befehl zu erhalten.";
 
     const embed = new EmbedBuilder()
