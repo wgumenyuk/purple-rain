@@ -99,7 +99,7 @@ export const command = new class extends Command {
         name: "Hilfe"
       })
       .setThumbnail(botUser.displayAvatarURL())
-      .setTitle(`Hilfe zu ${inlineCode(command.name)}`)
+      .setTitle(inlineCode(command.name))
       .setDescription(command.description);
 
     // Aliasse hinzufügen, falls vorhanden.
