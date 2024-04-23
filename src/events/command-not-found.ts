@@ -20,9 +20,10 @@ export const handle: EventHandler<"commandNotFound"> = function(
   message,
   commandName
 ) {
+  let description = `Der Befehl ${inlineCode(commandName)} wurde nicht gefunden.`;
+  
   const embed = new EmbedBuilder()
-    .setColor(Colors.Red)
-    .setDescription(`Der Befehl ${inlineCode(commandName)} wurde nicht gefunden.`);
+    .setColor(Colors.Red);
 
   const commands = bot.commands.map((command) => command.name);
 
@@ -32,11 +33,10 @@ export const handle: EventHandler<"commandNotFound"> = function(
 
   // Ähnlichsten Befehl hinzufügen, wenn Levenshtein-Distanz <= 2.
   if(distance <= 2) {
-    embed.addFields({
-      name: "Ähnlichster Befehl",
-      value: inlineCode(closestCommandName)
-    });
+    description += ` Meintest du ${inlineCode(closestCommandName)}?`;
   }
+
+  embed.setDescription(description);
 
   message.channel.send({
     embeds: [
